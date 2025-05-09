@@ -1,0 +1,42 @@
+<div id="cart-items"></div>
+<div id="cart-summary">
+  <p>Total Items: <span id="total-items">0</span></p>
+  <p>Subtotal: ₱<span id="subtotal">0.00</span></p>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalItemsSpan = document.getElementById('total-items');
+    const subtotalSpan = document.getElementById('subtotal');
+
+    const savedCart = localStorage.getItem('cart');
+    const cart = savedCart ? JSON.parse(savedCart) : [];
+
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+      let html = '';
+      let totalItems = 0;
+      let subtotal = 0;
+
+      cart.forEach(item => {
+        totalItems += item.quantity;
+        subtotal += item.price * item.quantity;
+
+        html += `
+          <div class="cart-item">
+            <h4>${item.name}</h4>
+            <p>₱${item.price.toFixed(2)} each</p>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Total: ₱${(item.price * item.quantity).toFixed(2)}</p>
+          </div>
+        `;
+      });
+
+      cartItemsContainer.innerHTML = html;
+      totalItemsSpan.textContent = totalItems;
+      subtotalSpan.textContent = subtotal.toFixed(2);
+    }
+  });
+</script>
