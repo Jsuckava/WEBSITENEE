@@ -117,21 +117,44 @@
         justify-items: center;
         align-items: center;
       }
-      .shape{
-        width: 140px;
-        height: 140px;
-        background: none;
-        border: 2px solid #000000;
-        border-radius: 25px;
-        transition: 0.4s ease-out;
+.shape {
+  width: 140px;
+  height: 140px;
+  background: none;
+  border: 2px solid #000000;
+  border-radius: 25px;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
 
-      }   
-      .shapes div:hover {
-        background-color: #f0f0f0;
-        transform: scale(1.4);
-        transition: all 0.4s ease-in-out;
-        cursor: pointer;
-      }
+.shape::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+     #e91e63 15%,
+    rgba(185, 4, 149, 0.4) 50%,
+    rgba(247, 0, 255, 0.368) 55%
+  );
+  transform: translateX(-120%) rotate(25deg);
+  transition: transform 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+.shape:hover::before {
+  transform: translateX(120%) rotate(25deg);
+}
+
+.shape:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 footer {
   background-color: #f7f7f7;
   text-align: center;
@@ -140,6 +163,7 @@ footer {
   width: 100%;
   overflow: hidden;
   position: relative;
+  transition: 0.5s ease;
 }
 
 footer.expanded {
@@ -149,7 +173,7 @@ footer.expanded {
   height: 100vh;
   margin-top: 0;
   z-index: 9999;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
   margin-top: 5rem;
 }
 
@@ -227,7 +251,7 @@ footer.expanded .hidden-form {
    }
    .socials img:hover{
     transform: scale(1.5);
-
+ 
    }
   .contact {
     font-size: 14px;
