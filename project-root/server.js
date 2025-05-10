@@ -57,6 +57,6 @@ app.post('/signup', (req, res) => {
   });
 });
 
-app.listen(4000, () => {
-  console.log('Server running on http://localhost:4000');
+app.listen(8000, () => {
+  console.log('Server running on http://localhost:8000');
 });
