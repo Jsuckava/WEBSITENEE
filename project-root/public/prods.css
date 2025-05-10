@@ -24,7 +24,9 @@
   .logo img {
     height: 50px;
   }
-  
+  .active {
+    color: #e91e63;
+  }
   nav a {
     margin-left: 1.5rem;
     text-decoration: none;
