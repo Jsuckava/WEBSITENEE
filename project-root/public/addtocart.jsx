@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="cart-item-total" style="margin-right: 10px;">Total: ₱${(item.qty * item.price).toFixed(2)}</span>
                     <button class="decrease-btn" data-name="${item.name}" style="background:blue;">-</button>
                     <button class="increase-btn" data-name="${item.name}" style="background: #28a745;">+</button>
-                    <button class="remove-btn" data-name="${item.name}" style="background:red;">remove</button>
+                    <button class="remove-btn" data-name="${item.name}"style="background:red;"><h1>remove</h1></button>
                 </section>
             `;
             cartItemsContainer.appendChild(itemSection);
@@ -92,11 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('checkout-btn').addEventListener('click', () => {
         if (cart.length === 0) {
-            checkoutSummaryText.textContent = 'Your cart is empty.';
             confirmCheckoutBtn.style.display = 'none';
         } else {
             const total = cart.reduce((acc, item) => acc + item.qty * item.price, 0);
-            checkoutSummaryText.textContent = `You are about to checkout ${cart.length} item(s). Total: ₱${total.toFixed(2)}. Proceed?`;
             confirmCheckoutBtn.style.display = 'inline-block';
         }
         checkoutModalWrapper.style.display = 'block';
@@ -116,4 +114,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateCartDisplay();
-});
+});z
