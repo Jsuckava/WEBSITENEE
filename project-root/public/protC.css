@@ -150,6 +150,7 @@ footer.expanded {
   margin-top: 0;
   z-index: 9999;
   transition: all 0.5s ease-in-out;
+  margin-top: 5rem;
 }
 
 footer.expanded .hidden-form {
@@ -161,7 +162,6 @@ footer.expanded .hidden-form {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
   }
 
 .hidden-form input,
