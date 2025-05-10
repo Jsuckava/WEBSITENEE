@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lei's FOODHUB</title>
     <link rel="stylesheet" href="protC.css">
-    <script></script>
+    <script src="function.jsx"></script>
 </head>
 <body>
     <header>
@@ -32,22 +32,31 @@
    
       
         <div class="shapes">
-            <div class="shape"><a href="#"><img src="pictures And Icons/cdo2.png" alt="CDO PRODUCTS"></a></div>
-            <div class="shape"><a href="link2.html"><img src="pictures And Icons/MOMLO.png" alt="Description 2"></a></div>
-            <div class="shape"><a href="pr1.html"><img src="pictures And Icons/PUREFO.png" alt="Description 3"></a></div>
-            <div class="shape"><a href="link4.html"><img src="pictures And Icons/frabelle.jpg" alt="Description 4"></a></div>
+            <div class="shape"><a href="pd1.html"><img src="pictures And Icons/cdo2.png" alt="CDO PRODUCTS"></a></div>
+            <div class="shape"><a href="pd2.html"><img src="pictures And Icons/MOMLO.png" alt="Description 2"></a></div>
+            <div class="shape"><a href="pd3.html"><img src="pictures And Icons/PUREFO.png" alt="Description 3"></a></div>
+            <div class="shape"><a href="pd4.html"><img src="pictures And Icons/frabelle.jpg" alt="Description 4"></a></div>
         </div>
-    
-      <footer>
-        <div class="socials">
-          <div><a href=""><img src="pictures And Icons/facebook.png" alt="FB"></a></div>
-          <div><a href=""><img src="pictures And Icons/google.png" alt="GMAIL"></a></div>
-          <div><a href=""><img src="pictures And Icons/twitter.png" alt="TWITTER"></a></div>
-        </div>
-        <h3>Contact Us.</h3>
-      </footer>
-      
-      
+
+     <footer id="main-footer">
+  <div class="socials">
+    <div><a href="#"><img src="pictures And Icons/facebook.png" alt="FB"></a></div>
+    <div><a href="#"><img src="pictures And Icons/google.png" alt="GMAIL"></a></div>
+    <div><a href="#"><img src="pictures And Icons/twitter.png" alt="TWITTER"></a></div>
+  </div>
+  <h3 id="contact-toggle" style="cursor: pointer;">Contact Us.</h3>
+
+  <div id="contact-form" class="hidden-form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <button type="submit">Send</button>
+    <button id="close-footer" style="margin-top: 10px;">Close</button>
+  </div>
+</footer>
+
+
+
     
 </body>
 </html>

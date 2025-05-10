@@ -26,11 +26,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    z-index: 1000;
   }
   nav{
     margin: 0;
     padding: 0;
     overflow: hidden;
+    z-index: 1000;
   }
   nav a {
     margin-left: 1.8rem;
@@ -39,6 +41,7 @@
     font-weight: 500;
     transition: color 0.3s;
     vertical-align: middle;
+    z-index: 1000;
   }
   .icon {
     width: 25px;
@@ -92,6 +95,7 @@
       .shop-button:hover{
         transition: 0.9s;
         background-color: #e91e63;        
+        
       }
       .shop-button a{
         color: #000;
@@ -128,12 +132,70 @@
         transition: all 0.4s ease-in-out;
         cursor: pointer;
       }
-  footer {
-    background-color: #f7f7f7;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
+footer {
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+footer.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  margin-top: 0;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
+}
+
+footer.expanded .hidden-form {
+  display: flex;
+}
+
+.hidden-form {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
   }
+
+.hidden-form input,
+.hidden-form textarea {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.hidden-form button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #e91e63;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.hidden-form button#close-footer {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hidden-form button#close-footer:hover {
+  background-color: #e91e63;
+  transition: all 0.3s ease;
+}
+
   h3{
     color: #000;
     font-family: Arial, Helvetica, sans-serif;
