@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="cart-item-total" style="margin-right: 10px;">Total: ₱${(item.qty * item.price).toFixed(2)}</span>
                     <button class="decrease-btn" data-name="${item.name}" style="background:blue;">-</button>
                     <button class="increase-btn" data-name="${item.name}" style="background: #28a745;">+</button>
-                    <button class="remove-btn" data-name="${item.name}"style="background:red;"><h1>remove</h1></button>
+                    <button class="remove-btn" data-name="${item.name}" style="background:red;">remove</button>
                 </section>
             `;
             cartItemsContainer.appendChild(itemSection);

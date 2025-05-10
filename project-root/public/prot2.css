@@ -28,13 +28,14 @@
     background-color: #f7f7f7;
     padding: 30px;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 
   }
 nav{
   margin: 0;
   padding: 0;
   overflow: hidden;
+  z-index: 1000;
 }
 nav a {
   margin: 0 15px;
@@ -289,6 +290,7 @@ main {
   display: flex;
   transition: transform 1s ease-in-out;
   width: 100%;
+  
 }
 
 .mySlides {
@@ -318,10 +320,12 @@ button {
 
 button.prev {
   left: 10px;
+  z-index: 100;
 }
 
 button.next {
   right: 10px;
+  z-index: 100;
 }
 
 .dots-container {
@@ -330,7 +334,7 @@ button.next {
   bottom: 10px; 
   left: 50%;
   transform: translateX(-50%); 
-  z-index: 1000;
+  z-index: 100;
 }
 
 .gos {
