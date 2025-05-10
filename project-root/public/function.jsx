@@ -116,63 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.style.display = 'none';
   });
 });
-//NOTE - Purchase logic
-function processPurchase() {
-  const productName = document.getElementById('product-name').innerText;
-  const quantity = document.querySelector('.quantity').value;
-  const price = document.getElementById('product-price').innerText.replace('₱', ''); 
-  const totalAmount = parseFloat(price) * quantity; 
-
-  const userId = 1; 
-
-  const purchaseData = {
-    user_id: userId,
-    product_name: productName,
-    quantity: quantity,
-    total_amount: totalAmount
-  };
-
-  fetch('/purchase', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(purchaseData)
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      alert("Purchase successful!");
+//NOTE - if else logic for the back button
+function goBack() {
+    if (document.referrer) {
+        window.history.back();
     } else {
-      alert("Error processing purchase.");
+        window.location.href = 'products.html';
     }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert("An error occurred.");
-  });
 }
-document.getElementById('confirmCheckoutBtn').addEventListener('click', () => {
-    const userId = 1; 
-    const productId = 123; 
-    const quantity = parseInt(document.querySelector('.input.quantity').value);
-
-    fetch('/purchase', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_id: userId, product_id: productId, quantity })
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            alert('Purchase successful! Order ID: ' + data.orderId);
-            location.reload();
-        } else {
-            alert('Error: ' + data.message);
-        }
-    })
-    .catch(err => {
-        console.error('Fetch error:', err);
-        alert('Something went wrong during checkout.');
-    });
-});
