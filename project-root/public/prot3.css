@@ -135,13 +135,16 @@ nav a:hover{
     padding: 0.3rem 0.5rem;
     font-size: 18px;
   }
-  p{
-    position: relative;
-    top: -14rem;
-    right: -12.5rem;
-    padding: 0.3rem 0.5rem;
-    font-size: 14px;
-  }
+
+   p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
   .aDec, .bAdd{
     font-weight: bolder;
     position: relative;
