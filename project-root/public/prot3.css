@@ -266,20 +266,20 @@ div.desc {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
-.Bt1{
-  background: none;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-right: none;
-  margin-left: -5.7rem;
-  margin-bottom: -5rem;
-  height: 100px;
-  width: 90px;
-  border: 2px solid #000;
+.Bt1, .Bt2 {
+  width: 80px;
+  height: 80px;
+  font-size: 14px;
+  text-align: center;
   border-radius: 10px;
+  border: 2px solid #000;
+  background: none;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 4px;
 }
+
 
 .PayBtn{
   position: relative;
@@ -356,21 +356,7 @@ div.desc {
   color: white;
 }
 
-.Bt2{
- background: none;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-right: none;
-  margin-left: -5.7rem;
-  margin-top: 3rem;
-  height: 95px;
-  width: 90px;
-  border: 2px solid #000;
-  border-radius: 10px;
-}
+
 .cart-modal-wrapper {
   position: fixed;
   top: 0;
