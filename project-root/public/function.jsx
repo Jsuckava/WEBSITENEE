@@ -99,6 +99,7 @@ function togglePaymentModal() {
   const wrapper = document.getElementById('modalWrapper');
   wrapper.style.display = wrapper.style.display === 'inline-flex' ? 'none' : 'inline-flex';
 }
+
 //NOTE - Footer Logic 
 document.addEventListener('DOMContentLoaded', () => {
   const contactBtn = document.getElementById('contact-toggle');
@@ -124,3 +125,11 @@ function goBack() {
         window.location.href = 'products.html';
     }
 }
+    fetch('/get-username')
+      .then(response => response.json())
+      .then(data => {
+        if (data.username) {
+          document.getElementById('username').textContent = data.username;
+        }
+      })
+      .catch(err => console.error('Error fetching username:', err));

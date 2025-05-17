@@ -1,4 +1,3 @@
-  // Helper function to animate an element in and reset it out
   function observeAnimatedElement(el, options = {}) {
     el.style.opacity = 0;
     el.style.transform = 'translateY(30px) scale(1)';
@@ -10,7 +9,6 @@
           el.style.opacity = 1;
           el.style.transform = 'translateY(0) scale(1)';
         } else {
-          // Reset to initial state when out of view
           el.style.opacity = 0;
           el.style.transform = 'translateY(30px)';
         }
@@ -21,14 +19,12 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    // Animate Welcome Section repeatedly
     const welcome = document.querySelector('.about-container');
     observeAnimatedElement(welcome, { transition: 'all 1s ease' });
 
     const gallery = document.querySelector('.gallery-section');
     observeAnimatedElement(gallery, { transition: 'all 1s ease' });
 
-    // Animate Gallery Images repeatedly with staggered delays
     const images = document.querySelectorAll('.gallery-grid img');
     images.forEach((img, index) => {
       img.style.transitionDelay = `${0.2 + index * 0.15}s`;
@@ -61,7 +57,6 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    // Existing animations...
     const welcome = document.querySelector('.about-container');
     observeAnimatedElement(welcome, { transition: 'all 1s ease' });
 
@@ -71,6 +66,5 @@
       observeAnimatedElement(img, { transition: 'all 0.6s ease' });
     });
 
-    // New location animation
     animateLocationSection();
   });

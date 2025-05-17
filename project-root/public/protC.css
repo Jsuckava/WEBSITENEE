@@ -139,7 +139,7 @@
     120deg,
      #e91e63 15%,
     rgba(185, 4, 149, 0.4) 50%,
-    rgba(247, 0, 255, 0.368) 55%
+    rgba(247, 0, 255, 0) 55%
   );
   transform: translateX(-120%) rotate(25deg);
   transition: transform 0.6s ease-in-out;
